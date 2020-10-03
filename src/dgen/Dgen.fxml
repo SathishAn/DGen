@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="566.0" prefWidth="685.0" stylesheets="@DGen.CSS" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dgen.DgenController">
+   <center>
+      <SplitPane dividerPositions="0.8" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <tabs>
+                        <Tab text="DGen">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="tableview" prefHeight="299.0" prefWidth="672.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn fx:id="module" prefWidth="588.6666259765625" text="Module" />
+                                          <TableColumn fx:id="dCount" prefWidth="301.3333740234375" text="Count" />
+                                          <TableColumn fx:id="executionFlagCH" prefWidth="120.0" text="CH" />
+                                          <TableColumn fx:id="executionFlagUS" prefWidth="120.0" text="US" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="DGen - Data">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.04128440366972477" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                             <children>
+                                                <TreeView fx:id="treeViewTestData" prefHeight="355.0" prefWidth="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                             <children>
+                                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints maxHeight="40.33334350585938" minHeight="40.0" prefHeight="26.000015258789062" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="425.99998474121094" minHeight="10.0" prefHeight="425.99998474121094" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                         <children>
+                                                            <ToolBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <items>
+                                                                  <Button fx:id="addNewRow" mnemonicParsing="false" onAction="#addNewRow" prefHeight="30.0" prefWidth="30.0" />
+                                                                  <Button fx:id="addNewCol" mnemonicParsing="false" onAction="#addNewColumn" prefHeight="30.0" prefWidth="30.0" />
+                                                                  <Button fx:id="deleteRow" mnemonicParsing="false" onAction="#deleteRow" prefHeight="30.0" prefWidth="30.0" />
+                                                                  <Button fx:id="deleteColumn" mnemonicParsing="false" onAction="#deleteColumn" prefHeight="30.0" prefWidth="30.0" />
+                                                                  <Button fx:id="saveTestData" mnemonicParsing="false" onAction="#saveFile" prefHeight="30.0" prefWidth="30.0" />
+                                                               </items>
+                                                            </ToolBar>
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <AnchorPane prefHeight="800.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <TableView fx:id="tableViewData" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Environment Properties">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="40.33334350585938" minHeight="40.0" prefHeight="26.000015258789062" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="375.99998474121094" minHeight="10.0" prefHeight="375.99998474121094" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <ToolBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <items>
+                                                      <Button fx:id="btnEnvAdd" mnemonicParsing="false" onAction="#addNewProperties" prefHeight="22.0" prefWidth="38.0" />
+                                                      <Button fx:id="btnEnvDelete" mnemonicParsing="false" onAction="#removeProperties" prefHeight="22.0" prefWidth="38.0" />
+                                                      <Button fx:id="btnEnvSave" mnemonicParsing="false" onAction="#saveProperties" prefHeight="22.0" prefWidth="38.0" />
+                                                      <Button fx:id="encrypt" mnemonicParsing="false" onAction="#encryptString" prefHeight="22.0" prefWidth="38.0" />
+                                                   </items>
+                                                </ToolBar>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="500.0" GridPane.rowIndex="1">
+                                             <children>
+                                                <TableView fx:id="environmentTableView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="environmentKey" prefWidth="521.0000305175781" text="Properties" />
+                                                      <TableColumn fx:id="environmentValue" prefWidth="725.0" text="Values" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TabPane fx:id="tabPaneConsole" prefHeight="161.0" prefWidth="685.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <tabs>
+                        <Tab fx:id="consoleTab" text="Console">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextArea fx:id="logArea" layoutY="-1.0" prefHeight="123.0" prefWidth="685.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="helpTab" text="Help">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane fx:id="helpAreaPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                      
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+   <left>
+      <AnchorPane prefHeight="518.0" prefWidth="14.0" BorderPane.alignment="CENTER" />
+   </left>
+   <bottom>
+      <AnchorPane prefHeight="18.0" prefWidth="685.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <right>
+      <AnchorPane prefHeight="500.0" prefWidth="13.0" BorderPane.alignment="CENTER" />
+   </right>
+   <top>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="40.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <BorderPane prefHeight="65.0" prefWidth="685.0" GridPane.rowIndex="1">
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <Button fx:id="BtnRun" mnemonicParsing="false" onAction="#Run" prefHeight="40.0" prefWidth="40.0" />
+                              <Button fx:id="BtnStop" mnemonicParsing="false" onAction="#stop" prefHeight="40.0" prefWidth="40.0" />
+                              <Button fx:id="BtnReport" mnemonicParsing="false" onAction="#loadReports" prefHeight="40.0" prefWidth="40.0" />
+                           </items>
+                        </ToolBar>
+                     </children>
+                  </AnchorPane>
+               </center>
+               <left>
+                  <AnchorPane prefHeight="65.0" prefWidth="401.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ToolBar prefHeight="65.0" prefWidth="490.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <Label text="DGen" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Consolas" size="35.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="0.42539680117652534" endY="0.6920634814671107" startX="0.02857143311273484" startY="0.2571428571428571">
+                                       <stops>
+                                          <Stop color="#db3717" />
+                                          <Stop color="#161515" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                           </items>
+                        </ToolBar>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <right>
+                  <AnchorPane prefHeight="65.0" prefWidth="156.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ToolBar layoutX="-8.0" prefHeight="65.0" prefWidth="99.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <Label fx:id="lblWelcome" prefHeight="39.0" prefWidth="125.0">
+                                 <font>
+                                    <Font name="Candara Light" size="12.0" />
+                                 </font>
+                              </Label>
+                           </items>
+                        </ToolBar>
+                     </children>
+                  </AnchorPane>
+               </right>
+            </BorderPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <MenuBar AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem fx:id="userGuideMenu" mnemonicParsing="false" onAction="#loadUserGuideDocument" text="UserGuide" />
+                          <MenuItem fx:id="AboutMenu" mnemonicParsing="false" onAction="#loadAbout" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+   </top>
+</BorderPane>

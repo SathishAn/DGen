@@ -1,0 +1,15 @@
+[
+	{
+		"id":"01.ContainerCustomer","description": "To Create Container Customer"
+	},
+	{
+		"id":"02.DDACashAccount","description": "To Create DDA Cash Account for the Container Customer"
+	},
+	{
+		"id":"03.MoneyMarketAccount","description": "To Create Money Market Account for the Container Customer"
+	},
+	{
+		"id":"04.MarginAccount","description": "To Create Account for the Container Customer"
+	}
+
+]
